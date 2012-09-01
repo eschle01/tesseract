@@ -7,7 +7,7 @@ int main(){
     string name;
     int age;
 
-    cout<<"Hello world";
+    cout<<"Hello world\n";
     cout<<"What's your name?\n";
     cin>>name;
     cout<<endl<<"How old are you?";
