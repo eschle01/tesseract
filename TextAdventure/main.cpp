@@ -50,39 +50,11 @@ int main(){
 
  void Game_Mode(){
 
-    Level1 Lev1;
-    int i;
-    for(i=0;i<20;i++){
-        cout<<"\n";
-        //creates a new line every time the for loop is run
-    }
+     Level test;
 
-    string start_location = "Dummy Cave";
-    string start_weapon = "Dummy sword";
-    int first_action=0;
-    //These have the word dummy in front of them because they are valid
-    //but should be randomized from a dictionary later, this way players
-    //don't experience the same adventure every time.
-    //All of this should be taken care of in the gameMode.cpp file
-    cout<<"Let's start the adventure\n";
-    cout<<"You Find yourself in a"<<start_location;//ToDo add a dictionary to this
-    cout<<"\nWith a "<<start_weapon;
-    cout<<"\nThere are bats everywhere!!!  What do you do?";
-    cout<<"\nOptions:"
-        <<"(1)run deeper into the cave "
-        <<endl<<"(2) fight the bats"
-        <<endl<<"(3)Pee your pants and then fight the bats"
-        <<endl<<"(4)Run towards the mouth of the cave ";
-     cin>>first_action;
-     switch(first_action){
-        case 1:
-            cout<<"You chose run deeper into the cave!!";
-            Lev1.Level1_Map();
+    test.Level1_controller();
 
 
-
-
-     }
 }
 
  void instructions(){
@@ -138,6 +110,7 @@ int main(){
                 cheat_Code(Iter);
                 break;
             case 4:
+                Iter = IterPlus(Iter);
                 exit(1);
                 break;
             default:
