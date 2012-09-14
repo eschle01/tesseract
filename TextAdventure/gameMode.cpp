@@ -9,6 +9,18 @@
 #include <ctime>
 
 
+/*
+THIS IS SUPPPER IMPORTANT PLEASE READ!!!
+
+Here is the order of events:
+
+    level1_controller -> bats_fight -> if you fight the bats (1)-> Level1_bats_killed ->
+                                        if bats killed and choose deeper into the cave -> level1_map else game ends.
+
+                      -> run from bats (2)-> if you run deeper into the cave -> level1_map
+
+*/
+
 using namespace std;
 
 /*
