@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <string>
+#include "gameMode.h"
 
 using namespace std;
 
@@ -8,9 +9,10 @@ int IterPlus(int Iter);
 //Use this to exit the menu and start the game.
 void Game_Mode();//ToDo
 void instructions(); //ToDo
-void cheat_Code(); //ToDo -- In progress
-void controller(int Input_Value);
-int Game_menu(int Iter);
+void cheat_Code(int &Iter); //ToDo -- In progress
+void controller(int Input_Value,int &Iter);
+//If Game mode is chosen Exit the loop, otherwise continue through it.
+int Game_menu();
 void load_level_2();//ToDo
 
 int main(){
@@ -35,8 +37,8 @@ int main(){
     cout<<"\nPlease hit return to continue";
     cin.get(str);
     do{
-        Choose_Mode = Game_menu(menuIter);
-        controller(Choose_Mode);
+        Choose_Mode = Game_menu();
+        controller(Choose_Mode,menuIter);
     }while(menuIter == 0);
 
 
@@ -47,26 +49,62 @@ int main(){
 }
 
  void Game_Mode(){
+    int i;
+    for(i=0;i<20;i++){
+        cout<<"\n";
+        //creates a new line every time the for loop is run
+    }
 
-    cout<<"Game_Mode works!";
+    string start_location = "Dummy Cave";
+    string start_weapon = "Dummy sword";
+    int first_action=0;
+    //These have the word dummy in front of them because they are valid
+    //but should be randomized from a dictionary later, this way players
+    //don't experience the same adventure every time.
+    //All of this should be taken care of in the gameMode.cpp file
+    cout<<"Let's start the adventure\n";
+    cout<<"You Find yourself in a"<<start_location;//ToDo add a dictionary to this
+    cout<<"\nWith a "<<start_weapon;
+    cout<<"\nThere are bats everywhere!!!  What do you do?";
+    cout<<"\nOptions:"
+        <<"(1)run deeper into the cave "
+        <<endl<<"(2) fight the bats"
+        <<endl<<"(3)Pee your pants and then fight the bats"
+        <<endl<<"(4)Run towards the mouth of the cave ";
+     cin>>first_action;
+     switch(first_action){
+        case 1:
+            cout<<"You chose run deeper into the cave!!";
+            Load_cave_layout();//ToDo in gameMode.cpp
 
 
 
+
+     }
 }
 
  void instructions(){
-    cout<<"Instructions works!";
-
+    string menu;
+    cout<<"Instructions works!\n";
+    cout<<"Would you like to read the instructions again?\n";
+    cin>>menu;
+    if(menu == "yes"){
+        cout<<"You must really like instructions";
+        instructions();
+    }
+    else{
+        Game_menu();
+    }
 }
 
- void cheat_Code(){
-    int Iter=0;
+ void cheat_Code(int &Iter){
     string code;
     string Yes_No;
     cout<<"Please enter a cheat code: ";
     cin>>code;
     if(code == "armor"){
             load_level_2();
+            Iter = IterPlus(Iter);
         }
      else  {
         cout<<"Incorrect cheat code\n";
@@ -74,43 +112,41 @@ int main(){
         cout<<"Enter anything else to enter another cheat code\n";
         cin>>Yes_No;
         if(Yes_No == "return")
-                    Game_menu(Iter);
+                    Game_menu();
         else{
 
                 }
      }
 
 }
- void controller(int Input_Value){
+ void controller(int Input_Value,int &Iter){
 
-    int Iter=0;
+     Iter=0;
  switch(Input_Value){
 
 
             case 1:
-                IterPlus(Iter);
+                Iter = IterPlus(Iter);
                 Game_Mode();
                 break;
             case 2:
-                IterPlus(Iter);
                 instructions();
                 break;
             case 3:
-                IterPlus(Iter);
-                cheat_Code();
+                cheat_Code(Iter);
                 break;
             case 4:
                 exit(1);
                 break;
             default:
                     cout<<"I'm sorry, your selection was not valid\n";
-                    Game_menu(Iter);
+                    Game_menu();
                     break;
 
         }
 }
 
- int Game_menu(int Iter){
+ int Game_menu(){
 
         string line_h = string(26, '-');
         string line_v = "|                         |";
