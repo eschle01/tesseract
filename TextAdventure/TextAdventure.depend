@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1347651875 source:c:\users\glitch\documents\github\tesseract\textadventure\main.cpp
+1347652172 source:c:\users\glitch\documents\github\tesseract\textadventure\main.cpp
 	<iostream>
 	<cstdlib>
 	<string>
@@ -9,7 +9,7 @@
 	<iostream>
 	<string>
 
-1347652047 source:c:\users\glitch\documents\github\tesseract\textadventure\gamemode.cpp
+1347652835 source:c:\users\glitch\documents\github\tesseract\textadventure\gamemode.cpp
 	<string>
 	<iostream>
 	<cstdlib>

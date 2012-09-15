@@ -99,13 +99,15 @@ void Level::Level1_controller(){
     int player_damage=0;
     int num_bats=10;
     int num_bats_left = 10;
-
+    int run_into_cave = 0;
 
     cout<<"Let's start the adventure\n";
     cout<<"You Find yourself in a "<<start_location;//ToDo add a dictionary to this
     cout<<" with a "<<start_weapon;
-    this->bats_fight();
-
+    run_into_cave = this->bats_fight();
+    if(run_into_cave == 1){
+            //nav goes here
+            }
 
 }
 
