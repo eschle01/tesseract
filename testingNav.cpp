@@ -1,4 +1,4 @@
-    #include "navigation.h"
+   // #include "navigation.h"
     #include <iostream>
     #include <cstdlib>
     #include <ctime>
@@ -6,7 +6,25 @@
 
     using namespace std;
 
-        void nav::map_update(int a[4][4]){
+
+class nav{
+
+    public:
+        int coordinate_system[4][4];
+        int player_position;
+        void nav_menu();
+        void map_check(string dir);
+        void generateCoordinateSystem(int a[4][4]);
+        void blocked();//checks if a player can move a given direction
+        int enemy_position;
+        int treasure_position;
+        int player_position_x;
+        int player_position_y;
+        void map_update(int a[4][4]);
+};
+
+
+        void map_update(int a[4][4]){
 
 
 
@@ -48,7 +66,7 @@
         }
 
 
-        void nav::generateCoordinateSystem(int a[4][4]){
+void nav::generateCoordinateSystem(int a[4][4]){
             int i;
             int j;
 
@@ -67,3 +85,21 @@
         }
 
 
+
+int main(){
+
+    nav Navi;
+    //nav *ptr;
+
+
+    Navi.generateCoordinateSystem(Navi.coordinate_system);
+     int i;
+     int j;
+     for(i=0;i<4;i++){
+                for(j=0;j<4;j++){
+                    cout<<endl<<Navi.coordinate_system[i][j]<<" equals "<<i<<","<<j;
+                }
+            }
+
+    return 0;
+}
