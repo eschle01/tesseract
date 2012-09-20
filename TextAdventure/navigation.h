@@ -14,6 +14,7 @@
 class nav{
 
     public:
+        nav(int x,int y);//constructor
         int coordinate_system[4][4];
         int player_position;
         void nav_menu();
