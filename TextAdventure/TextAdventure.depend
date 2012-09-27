@@ -1,18 +1,26 @@
 # depslib dependency file v1.0
-1347652172 source:c:\users\glitch\documents\github\tesseract\textadventure\main.cpp
+1348247979 source:c:\users\glitch\documents\github\tesseract\textadventure\main.cpp
 	<iostream>
 	<cstdlib>
 	<string>
 	"gameMode.h"
+	"coordinates.h"
 
 1347651807 c:\users\glitch\documents\github\tesseract\textadventure\gamemode.h
 	<iostream>
 	<string>
 
-1347673588 source:c:\users\glitch\documents\github\tesseract\textadventure\gamemode.cpp
+1348246883 source:c:\users\glitch\documents\github\tesseract\textadventure\gamemode.cpp
 	<string>
 	<iostream>
 	<cstdlib>
 	"gameMode.h"
 	<ctime>
+	"coordinates.h"
+
+1348235081 c:\users\glitch\documents\github\tesseract\textadventure\coordinates.h
+	<iostream>
+	<cstdlib>
+	<ctime>
+	<cmath>
 

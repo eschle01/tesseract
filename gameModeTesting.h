@@ -23,15 +23,5 @@ class Level{
         int traversing_Map();
 
 };
-/*
-class Level2{
 
-  public:
-        string start_location[2];
-        string start_weapon[2];
-        int first_action;
-        //void Level2_Map();
-
-
-};*/
 #endif

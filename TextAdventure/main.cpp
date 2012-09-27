@@ -1,7 +1,9 @@
+
 #include <iostream>
 #include <cstdlib>
 #include <string>
 #include "gameMode.h"
+#include "coordinates.h"
 
 using namespace std;
 
@@ -14,9 +16,25 @@ void controller(int Input_Value,int &Iter);
 //If Game mode is chosen Exit the loop, otherwise continue through it.
 int Game_menu();
 void load_level_2();//ToDo
-
+void welcomeScreen();
 int main(){
 
+    int menuIter=0;
+    int Choose_Mode;
+    welcomeScreen();
+
+    do{
+        Choose_Mode = Game_menu();
+        controller(Choose_Mode,menuIter);
+    }while(menuIter == 0);
+
+
+    return 0;
+}
+
+void welcomeScreen(){
+
+//Welcome screen starts here
     char str;
     //used to create graphics
     string line_h = string(26, '-');
@@ -29,25 +47,15 @@ int main(){
     string box_And =  "\n" + line_v + "\n" + "|" +"\t   " +"And"+"\t\t  "+"|" +"\n" + line_v + "\n" + line_h;
     string box_Welcome ="\n" + line_v + "\n" + "|" +"\t   " +"Welcome"+"\t  "+"|" +"\n" + line_v + "\n" + line_h;
 
-    int menuIter=0;
-    int Choose_Mode;
+
 
     cout<<"Welcome to Text adventure!!!\n";
     cout<< box_Hi<<box_And<<box_Welcome;
     cout<<"\nPlease hit return to continue";
     cin.get(str);
-    do{
-        Choose_Mode = Game_menu();
-        controller(Choose_Mode,menuIter);
-    }while(menuIter == 0);
+    //welcome screen ends here
 
-
-
-
-
-    return 0;
 }
-
  void Game_Mode(){
 
      Level test;

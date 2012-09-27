@@ -2,12 +2,10 @@
 //This will be the .cpp file
 #include <string>
 #include <iostream>
-//#include "gameMode.h"
-//^only for project file
 #include <cstdlib>
 #include "gameMode.h"
 #include <ctime>
-
+#include "coordinates.h"
 
 /*
 THIS IS SUPPPER IMPORTANT PLEASE READ!!!
@@ -23,17 +21,7 @@ Here is the order of events:
 
 using namespace std;
 
-/*
-class Level{
 
-    public:
-        string start_location[2];
-        string start_weapon[2];
-        int first_action;
-        void Level1_Map();
-        int Level1_controller();
-
-};*/
 
 void Level::Level1_Map(){
 
@@ -106,7 +94,15 @@ void Level::Level1_controller(){
     cout<<" with a "<<start_weapon;
     run_into_cave = this->bats_fight();
     if(run_into_cave == 1){
-            //nav goes here
+                //need
+                nav map_info;
+  //              Point Map[4];
+
+//                map_info.generate_coor(Map,4);
+                //FIXThis
+
+
+
             }
 
 }
